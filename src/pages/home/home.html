@@ -1,14 +1,46 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
+<!-- <ion-content padding>
   The world is your oyster.
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+    {{distance}}, {{count}}
   </p>
-</ion-content>
+  <p>
+    rss:{{rssi}}, tx: {{tx}}
+  </p>
+</ion-content> -->
+
+<div style="position:absolute; height:100%; width:100%;">
+  <div> 
+
+    <p>{{rssi}}, {{tx}}, {{distance}}</p>
+  </div>
+  <div *ngIf="show_cf" style="z-index:999; position:absolute; width:100%; height:50%; margin:auto; background-color:yellow;top:0; bottom:0; left:0; right:0;">
+      <img src="assets/imgs/cf_ad.png" style="width:100%" />
+  </div>
+  <!-- <div *ngIf="show_hm" style="z-index:999; position:absolute; width:100%; height:50%; margin:auto; background-color:yellow;top:0; bottom:0; left:0; right:0;">
+      <img src="assets/imgs/hm_ad.png" style="width:100%" />
+
+  </div> -->
+
+  
+  <div style="position:absolute; background-color:#D6D5D5;width:5px; height:100%; margin:auto; margin-top:55px; top:0; bottom:0; left:0; right:0;"></div>
+
+  <div style="position:absolute; border-radius:24px; margin:auto; margin-top:0; width:64px; height:64px; top:auto; bottom:80%; left:0;  right:0;">
+    <img src="assets/imgs/cf.png"  />
+  </div>
+  <!-- <div style="position:absolute; border-radius:24px; margin:auto; margin-top:0; width:64px; height:64px; bottom:45%; top:auto; left:0;  right:0;" >
+      <img src="assets/imgs/hm.png"  />
+    </div> -->
+  <div *ngIf="!show_cf" style="position:absolute; border-radius:24px; margin:auto; margin-top:0; width:50px; height:50px; top:auto;left:0;  right:0; background-color:#73FDEA;transition:bottom 1s linear;"  [style.bottom]="bottom"></div>
+
+
+
+
+</div>
